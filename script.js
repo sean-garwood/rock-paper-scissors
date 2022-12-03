@@ -21,9 +21,9 @@ PLAN
   initialize wins vars? Or is this done in the for-loop as an index?
     --don't we need two vars? compWins, humanWins?
   for loop until wins=3 for either player
-    fn 1.) prompt for input: "Choose one: rock, paper, or scissors."
+    fn 1.) generate random computer move
+    fn 2.) prompt for input: "Choose one: rock, paper, or scissors."
       need to convert to lowercase, build in exceptions, i.e. "That is not a valid choice" if input != one of r, p, or s.
-    fn 2.) generate random computer move
     fn 3.) test for victory, using comp move and human move as params
       -nine possible combinations, three of which result in ties, and six of which result in a victor.
         -if tie, go back to beginning
@@ -31,3 +31,11 @@ PLAN
   game ends when for-loop is exited:
     print "congrats" or "sorry"
     "play again?" (this might be challenging, idk)
+
+PSEUDOCODE
+
+Function declarations at the top
+
+fn 1: getComputerChoice //randomly generates one of three strings: 'rock', 'paper', or 'scissors'.*/
+
+function getComputerChoice() {}
