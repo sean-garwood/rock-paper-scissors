@@ -38,4 +38,8 @@ Function declarations at the top
 
 fn 1: getComputerChoice //randomly generates one of three strings: 'rock', 'paper', or 'scissors'.*/
 
-function getComputerChoice() {}
+function getComputerChoice() {
+  return Math.floor(Math.random() * 3);
+}
+
+console.log(getComputerChoice());
