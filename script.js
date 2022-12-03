@@ -51,6 +51,10 @@ console.log(getComputerChoice()); //success: prints either 'rock', 'paper', or '
 /*fn2: prompt for input
 
 function getHumanChoice() {
-  prompt("Select one of the following: Rock, paper, or scissors.", '')
-  error handling: if 
-}*/
+  let choice = prompt("Select one of the following: Rock, paper, or scissors.", '')
+  error handling: if choice !== 'rock'/'paper'/scissors
+    return 'this is not a valid choice. try again.
+  else: return choice.toLowerCase();
+}
+
+*/
