@@ -39,7 +39,18 @@ Function declarations at the top
 fn 1: getComputerChoice //randomly generates one of three strings: 'rock', 'paper', or 'scissors'.*/
 
 function getComputerChoice() {
-  return Math.floor(Math.random() * 3);
+  if (Math.floor(Math.random() * 3) === 0) {
+    return 'rock';
+  } else if (Math.floor(Math.random() * 3) === 1) {
+    return 'paper';
+  } else {return 'scissors';}
 }
 
-console.log(getComputerChoice());
+console.log(getComputerChoice()); //success: prints either 'rock', 'paper', or 'scissors' to console.
+
+/*fn2: prompt for input
+
+function getHumanChoice() {
+  prompt("Select one of the following: Rock, paper, or scissors.", '')
+  error handling: if 
+}*/
