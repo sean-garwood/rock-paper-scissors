@@ -14,3 +14,20 @@ I will need a script.js file, which will contain the logic and functions for the
     game(): contains the following function, as well as a prompt that reports the result of each match
       playRound: Test for victory, using two parameters: playerSelection, computerSelection;
     
+PLAN
+
+  console: game starts with greeting: "Let's play rock-paper-scissors!"
+  enter game() function:
+  initialize wins vars? Or is this done in the for-loop as an index?
+    --don't we need two vars? compWins, humanWins?
+  for loop until wins=3 for either player
+    fn 1.) prompt for input: "Choose one: rock, paper, or scissors."
+      need to convert to lowercase, build in exceptions, i.e. "That is not a valid choice" if input != one of r, p, or s.
+    fn 2.) generate random computer move
+    fn 3.) test for victory, using comp move and human move as params
+      -nine possible combinations, three of which result in ties, and six of which result in a victor.
+        -if tie, go back to beginning
+        -if victor, return victor to console, as well as the total match score. increment either compWins or humanWins, goto beginning of fn
+  game ends when for-loop is exited:
+    print "congrats" or "sorry"
+    "play again?" (this might be challenging, idk)
