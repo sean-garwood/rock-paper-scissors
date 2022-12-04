@@ -57,4 +57,21 @@ function getHumanChoice() {
   else: return choice.toLowerCase();
 }
 
+fn3: test for victory {
+  nine possibilities, three ties, three wins, three losses
+  if statement
+  check for tie 
+  elif checking for two rock wincons
+  elif checking for two scissors wincons
+  else check for paper wincons
+
+fn4: game {
+  fn calls
+  console.log for victor
+  (play again>)
+
+}
+
+}
+
 */
