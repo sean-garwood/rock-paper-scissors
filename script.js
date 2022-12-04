@@ -47,11 +47,11 @@ function getComputerChoice() {
 
 
 //plays a round, returns a string reporting results
-playRound(playerSelection, computerSelection) {
+function playRound(playerSelection, computerSelection) {
   //nine possibilities, three ties, three wins, three losses
   if (playerSelection === computerSelection) {
     return 'It\'s a tie.';
-  } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors'); {
+  } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors') {
     return 'You lose';
   } else {return 'You win';}
 }
