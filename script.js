@@ -50,7 +50,7 @@ function getComputerChoice() {
 function playRound(playerSelection, computerSelection) {
   //nine possibilities, three ties, three wins, three losses
   if (playerSelection === computerSelection) {
-    return 'It\'s a tie.';
+    return 'It\'s a tie';
   } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors') {
     return 'You lose';
   } else {return 'You win';}
@@ -60,8 +60,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
   for (let i = 0; i < 5; i++) {
     const playerSelection = 'rock';
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
+    console.log(playRound(playerSelection, getComputerChoice()));
   }
 }
 
