@@ -56,17 +56,13 @@ function playRound(playerSelection, computerSelection) {
   } else {return 'You win';}
 }
 
-//testing, testing...
-let playerSelection = 'rock';
-console.log(playRound(playerSelection, getComputerChoice()));
-/*
-fn4: game {
-  for loop, index=0, increment up to 4.
-  fn1, 2, 3
-  console.log for victor
+
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = 'rock';
+    const computerSelection = getComputerChoice();
+    return playRound(playerSelection, computerSelection);
+  }
 }
 
-play again?
-}
-
-*/
+console.log(game());
