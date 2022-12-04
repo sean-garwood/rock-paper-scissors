@@ -22,9 +22,7 @@ PLAN
     --don't we need two vars? compWins, humanWins?
   for loop until wins=3 for either player
     fn 1.) generate random computer move
-    fn 2.) prompt for input: "Choose one: rock, paper, or scissors."
-      need to convert to lowercase, build in exceptions, i.e. "That is not a valid choice" if input != one of r, p, or s.
-    fn 3.) test for victory, using comp move and human move as params
+    fn 2.) play round. return a string that will be console.logged. basically a big conditional statement
       -nine possible combinations, three of which result in ties, and six of which result in a victor.
         -if tie, go back to beginning
         -if victor, return victor to console, as well as the total match score. increment either compWins or humanWins, goto beginning of fn
@@ -46,18 +44,13 @@ function getComputerChoice() {
   } else {return 'scissors';}
 }
 
-console.log(getComputerChoice()); //success: prints either 'rock', 'paper', or 'scissors' to console.
+//console.log(getComputerChoice()); //success: prints either 'rock', 'paper', or 'scissors' to console.
 
-/*fn2: prompt for input
+/*
 
-function getHumanChoice() {
-  let choice = prompt("Select one of the following: Rock, paper, or scissors.", '')
-  error handling: if choice !== 'rock'/'paper'/scissors
-    return 'this is not a valid choice. try again.
-  else: return choice.toLowerCase();
-}
-
-fn3: test for victory {
+//plays a round, returns a string reporting results
+fn2: playRound(playerSelection, computerSelection)  
+test for victory {
   nine possibilities, three ties, three wins, three losses
   if statement
   check for tie 
@@ -66,12 +59,12 @@ fn3: test for victory {
   else check for paper wincons
 
 fn4: game {
-  fn calls
+  init victory counts, set to zero
+  fn1, 2, 3
   console.log for victor
-  (play again>)
-
 }
 
+play again?
 }
 
 */
