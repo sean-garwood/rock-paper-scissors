@@ -61,8 +61,9 @@ function game() {
   for (let i = 0; i < 5; i++) {
     const playerSelection = 'rock';
     const computerSelection = getComputerChoice();
-    return playRound(playerSelection, computerSelection);
+    console.log(playRound(playerSelection, computerSelection));
   }
 }
 
-console.log(game());
+game();
+
