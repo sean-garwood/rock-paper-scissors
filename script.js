@@ -47,18 +47,21 @@ function getComputerChoice() {
 
 
 //plays a round, returns a string reporting results
-playRound(playerSelection, computerSelection) 
+playRound(playerSelection, computerSelection) {
   //nine possibilities, three ties, three wins, three losses
   if (playerSelection === computerSelection) {
     return 'It\'s a tie.';
   } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors'); {
     return 'You lose';
   } else {return 'You win';}
+}
 
 //testing, testing...
+let playerSelection = 'rock';
+console.log(playRound(playerSelection, getComputerChoice()));
 /*
 fn4: game {
-  init victory counts, set to zero
+  for loop, index=0, increment up to 4.
   fn1, 2, 3
   console.log for victor
 }
