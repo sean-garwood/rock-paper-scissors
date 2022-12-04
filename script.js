@@ -32,9 +32,9 @@ PLAN
 
 PSEUDOCODE
 
-Function declarations at the top
+//randomly generates one of three strings: 'rock', 'paper', or 'scissors'.
 
-fn 1: getComputerChoice //randomly generates one of three strings: 'rock', 'paper', or 'scissors'.*/
+*/
 
 function getComputerChoice() {
   if (Math.floor(Math.random() * 3) === 0) {
@@ -44,20 +44,19 @@ function getComputerChoice() {
   } else {return 'scissors';}
 }
 
-//console.log(getComputerChoice()); //success: prints either 'rock', 'paper', or 'scissors' to console.
 
-/*
 
 //plays a round, returns a string reporting results
-fn2: playRound(playerSelection, computerSelection)  
-test for victory {
-  nine possibilities, three ties, three wins, three losses
-  if statement
-  check for tie 
-  elif checking for two rock wincons
-  elif checking for two scissors wincons
-  else check for paper wincons
+playRound(playerSelection, computerSelection) 
+  //nine possibilities, three ties, three wins, three losses
+  if (playerSelection === computerSelection) {
+    return 'It\'s a tie.';
+  } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors'); {
+    return 'You lose';
+  } else {return 'You win';}
 
+//testing, testing...
+/*
 fn4: game {
   init victory counts, set to zero
   fn1, 2, 3
