@@ -45,7 +45,10 @@ function playRound(playerSelection, computerSelection) {
   //nine possibilities, three ties, three wins, three losses
   if (playerSelection === computerSelection) {
     return 'It\'s a tie';
-  } else if (playerSelection === 'rock' && computerSelection === 'paper' || playerSelection === 'paper' && computerSelection === 'scissors') {
+  } else if (playerSelection === 'rock' && computerSelection === 'paper' 
+  || playerSelection === 'paper' && computerSelection === 'scissors'
+  || playerSelection === 'scissors' && computerSelection === 'rock'
+  ) {
     return 'You lose';
   } else {return 'You win';}
 }
@@ -58,11 +61,14 @@ function getPlayerChoice() {
 //plays five rounds and prints the results back to the console.
 function game() {
   for (let i = 0; i < 5; i++) {
+    //declare human score
+    //declare computer score
     const choice = getPlayerChoice();
     if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
       return game(); //starts game over if invalid input is entered by user
-    } else {console.log(playRound(choice, getComputerChoice()));}
+    } else {
+      console.log(playRound(choice, getComputerChoice()));}
   }
 }
 
-game();
+game(); //making this a fn call instead of a code block seems to be helpful, because it can be recursively called by itself.
