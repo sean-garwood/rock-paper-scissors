@@ -60,10 +60,9 @@ function game() {
   for (let i = 0; i < 5; i++) {
     const choice = getPlayerChoice();
     if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
-      return game();
-    } else {console.log(playRound(choice, getComputerChoice()));} //it's breaking here because return exits the loop.
+      return game(); //starts game over if invalid input is entered by user
+    } else {console.log(playRound(choice, getComputerChoice()));}
   }
 }
 
 game();
-
