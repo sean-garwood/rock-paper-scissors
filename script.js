@@ -44,8 +44,6 @@ function getComputerChoice() {
   } else {return 'scissors';}
 }
 
-
-
 //plays a round, returns a string reporting results
 function playRound(playerSelection, computerSelection) {
   //nine possibilities, three ties, three wins, three losses
@@ -56,17 +54,22 @@ function playRound(playerSelection, computerSelection) {
   } else {return 'You win';}
 }
 
-
-function game() {
-  for (let i = 0; i < 5; i++) {
-    console.log(playRound(getPlayerChoice(), getComputerChoice()));
-  }
-}
-
 //prompts the user for a choice of rock, paper, or scissors
 function getPlayerChoice() {
   return prompt('Rock, paper, or scissors?', 'rock').toLocaleLowerCase();
 }
+
+//plays five rounds and prints the results back to the console.
+function game() {
+  for (let i = 0; i < 5; i++) {
+    const choice = getPlayerChoice();
+    if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
+      game();
+    } else {return console.log(playRound(getPlayerChoice(), getComputerChoice()));} //it's breaking here because there's no error handling in this call to getPlayerChoice().
+  }
+}
+
+
 
 game();
 
