@@ -16,11 +16,11 @@ I will need a script.js file, which will contain the logic and functions for the
     
 PLAN
 
-  console: game starts with greeting: "Let's play rock-paper-scissors!"
   enter game() function:
   initialize wins vars? Or is this done in the for-loop as an index?
     --don't we need two vars? compWins, humanWins?
-  for loop until wins=3 for either player
+  for loop 
+    five rounds, index starts at zero and increments by one up to four.
     fn 1.) generate random computer move
     fn 2.) play round. return a string that will be console.logged. basically a big conditional statement
       -nine possible combinations, three of which result in ties, and six of which result in a victor.
@@ -29,13 +29,9 @@ PLAN
   game ends when for-loop is exited:
     print "congrats" or "sorry"
     "play again?" (this might be challenging, idk)
-
-PSEUDOCODE
-
-//randomly generates one of three strings: 'rock', 'paper', or 'scissors'.
-
 */
 
+//randomly generates one of three strings: 'rock', 'paper', or 'scissors'.
 function getComputerChoice() {
   if (Math.floor(Math.random() * 3) === 0) {
     return 'rock';
@@ -65,7 +61,7 @@ function game() {
     const choice = getPlayerChoice();
     if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
       return game();
-    } else {return console.log(playRound(getPlayerChoice(), getComputerChoice()));} //it's breaking here because there's no error handling in this call to getPlayerChoice().
+    } else {console.log(playRound(choice, getComputerChoice()));} //it's breaking here because return exits the loop.
   }
 }
 
