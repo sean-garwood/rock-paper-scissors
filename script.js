@@ -64,12 +64,10 @@ function game() {
   for (let i = 0; i < 5; i++) {
     const choice = getPlayerChoice();
     if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
-      game();
+      return game();
     } else {return console.log(playRound(getPlayerChoice(), getComputerChoice()));} //it's breaking here because there's no error handling in this call to getPlayerChoice().
   }
 }
-
-
 
 game();
 
