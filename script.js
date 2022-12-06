@@ -45,7 +45,8 @@ function playRound(playerSelection, computerSelection) {
   //nine possibilities, three ties, three wins, three losses
   if (playerSelection === computerSelection) {
     return 'It\'s a tie';
-  } else if (playerSelection === 'rock' && computerSelection === 'paper' 
+  } else if (
+    playerSelection === 'rock' && computerSelection === 'paper' 
   || playerSelection === 'paper' && computerSelection === 'scissors'
   || playerSelection === 'scissors' && computerSelection === 'rock'
   ) {
@@ -58,16 +59,35 @@ function getPlayerChoice() {
   return prompt('Rock, paper, or scissors?', 'rock').toLocaleLowerCase();
 }
 
+//print results of the round to the console
+function printResults(userScore, computerScore) {
+  console.log('user score: ' + userScore + '\ncomputer score: ' + computerScore);
+}
+
 //plays five rounds and prints the results back to the console.
 function game() {
+  let userScore = 0;
+  let computerScore = 0; 
+
   for (let i = 0; i < 5; i++) {
-    //declare human score
-    //declare computer score
     const choice = getPlayerChoice();
     if (choice !== 'rock' && choice !== 'paper' && choice !== 'scissors') {
       return game(); //starts game over if invalid input is entered by user
     } else {
-      console.log(playRound(choice, getComputerChoice()));}
+      let result = playRound(choice, getComputerChoice());
+      if (result === 'It\'s a tie') {
+        console.log('It\'s a tie');
+        printResults(userScore, computerScore);
+      } else if (result === 'You lose') {
+        computerScore += 1;
+        console.log('You lose');
+        printResults(userScore, computerScore);
+      } else {
+        userScore += 1;
+        console.log('You win');
+        printResults(userScore, computerScore)
+      }
+    }
   }
 }
 
