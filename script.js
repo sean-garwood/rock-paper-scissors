@@ -21,15 +21,24 @@ alerts win/lose/tie depending on result of the round
 
 PLAN
 
-I need to rewrite the getPlayerChoice function to return the value of the button
-that is being clicked instead of a prompt into the console.
+I need to declare three variables, one for each button element in the document.
+i need to store the value of document.querySelector('#rock') into the rock
+variable/object.
+
 
 that might look something like this:
+
+PSEUDOCODE
 
 fn gPC(args?) {
   store the contents of the button clicked into a variable called choice and
   return it.
 }
+
+declare three button vars
+add event listeners to each that returns some function on click.
+  --what is that function?
+
 
 */
 
