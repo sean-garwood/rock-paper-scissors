@@ -4,5 +4,4 @@ A console-browser-based game of rock paper scissors, created as part of the Foun
 
 # todo
 
-Add a `div` for displaying results.
-Change console.logs into DOM methods.
+Change returned value of playRound from console.logs into DOM methods
