@@ -1,11 +1,35 @@
 /*OUTLINE/REWRITE THE PROBLEM.
 
-remove logic that plays five rounds
+add event listeners to each of the buttons.
+have the player make their choice based on which button is pressed.
+in other words, have getPlayerChoice return either 'rock', 'paper', or scissors
+
+need to do something like what the drum kit did:
+define an array-like object that selects all of the buttons in the document
+so that I can loop through them and add an event listener to each.
+
+or, more trivially, just add an event listener to the window that listens for
+clicks, then returns the text of the button element that was selected, and
+passes that to the playRound function.
+
 
 
 ELEMENTS
 
+three buttons
+alerts win/lose/tie depending on result of the round
+
 PLAN
+
+I need to rewrite the getPlayerChoice function to return the value of the button
+that is being clicked instead of a prompt into the console.
+
+that might look something like this:
+
+fn gPC(args?) {
+  store the contents of the button clicked into a variable called choice and
+  return it.
+}
 
 */
 
@@ -16,6 +40,11 @@ function getComputerChoice() {
   } else if (Math.floor(Math.random() * 3) === 1) {
     return 'paper';
   } else {return 'scissors';}
+}
+
+//prompts the user for a choice of rock, paper, or scissors
+function getPlayerChoice() {
+  return prompt('Rock, paper, or scissors?', 'rock').toLocaleLowerCase();
 }
 
 //plays a round, returns a string reporting results
@@ -32,10 +61,6 @@ function playRound(playerSelection, computerSelection) {
   } else {return 'You win';}
 }
 
-//prompts the user for a choice of rock, paper, or scissors
-function getPlayerChoice() {
-  return prompt('Rock, paper, or scissors?', 'rock').toLocaleLowerCase();
-}
 
 //print results of the round to the console
 function printResults(userScore, computerScore) {
