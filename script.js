@@ -86,11 +86,11 @@ function game() {
 }
 */
 
-const rock = document.querySelector('#rock');
-const paper = document.querySelector('#paper');
-const scissors = document.querySelector('#scissors');
+const buttons = document.querySelectorAll('button');
 
-rock.addEventListener('click', e => playRound('rock', getComputerChoice()));
-paper.addEventListener('click', e => playRound('paper', getComputerChoice()));
-scissors.addEventListener('click', e => playRound('scissors', getComputerChoice()));
-//can't help but think there's a better way to do this.
+buttons.forEach((button) => {
+
+  button.addEventListener('click', () => {
+    playRound(button.id, getComputerChoice())
+  });
+});
