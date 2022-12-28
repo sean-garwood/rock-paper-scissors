@@ -4,12 +4,5 @@ A console-browser-based game of rock paper scissors, created as part of the Foun
 
 # todo
 
-Play a match by clicking on buttons rather than typing answer.
-three buttons:
-  - Rock
-  - Paper
-  - Scissors
-
-Add an event listener to each of the above buttons. These will call the
-playRound function with the correct playerSelection every time a button is
-clicked.
+Add a `div` for displaying results.
+Change console.logs into DOM methods.
