@@ -11,5 +11,5 @@ three buttons:
   - Scissors
 
 Add an event listener to each of the above buttons. These will call the
-play'Round function with the correct playerSelection every time a button is
+playRound function with the correct playerSelection every time a button is
 clicked.
