@@ -1,13 +1,13 @@
 /*
 OUTLINE/REWRITE THE PROBLEM.
 
-Append results of each match to results.
+track player scores. End the game whenever a player reaches five wins.
 
 ELEMENTS
 
-need to add a div to the DOM that will display results
-
-Append the result of each round to the div.
+two vars: playerScore, computerScore
+while loop that runs while playerScore <5 or computerScore <5
+create/append div to the body of the document
 
 PLAN
 

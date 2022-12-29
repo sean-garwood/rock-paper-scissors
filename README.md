@@ -4,4 +4,5 @@ A console-browser-based game of rock paper scissors, created as part of the Foun
 
 # todo
 
-Change returned value of playRound from console.logs into DOM methods
+display running score
+end game whenever a player reaches five wins.
