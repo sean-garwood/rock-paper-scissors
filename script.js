@@ -1,24 +1,3 @@
-/*
-OUTLINE/REWRITE THE PROBLEM.
-
-track player scores. End the game whenever a player reaches five wins.
-
-ELEMENTS
-
-two vars: playerScore, computerScore
-while loop that runs while playerScore <5 or computerScore <5
-create/append div to the body of the document
-
-PLAN
-
-
-PSEUDOCODE
-
-with each click of a button, append the result of each match to the div
-
-*/
-
-//randomly generates one of three strings: 'rock', 'paper', or 'scissors'.
 function getComputerChoice() {
   if (Math.floor(Math.random() * 3) === 0) {
     return 'rock';
