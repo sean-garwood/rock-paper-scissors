@@ -47,20 +47,22 @@ function printResults(userScore, computerScore) {
 }
 
 function checkScores(userScore, computerScore) {
-  if (userScore < 5 || computerScore < 5) {
-    return;
+  if (userScore < 5 && computerScore < 5) {
+    return null;
   } else {
     return gameOver(userScore, computerScore);
   }
 }
 
 function gameOver(userScore, computerScore) {
-  if (userScore > computerScore) {
-    return 'Gamve over. User wins!'
-  } else {
+  if (userScore >= 5) {
+    return 'Game over. User wins!'
+  }
+  if (computerScore >= 5) {
     return 'Game over. Computer wins!'
   }
 }
+
 const body = document.querySelector('body');
 const buttons = document.querySelectorAll('button');
 let userScore = 0;
