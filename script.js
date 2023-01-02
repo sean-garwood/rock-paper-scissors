@@ -43,20 +43,42 @@ function playRound(playerSelection, computerSelection) {
 
 //print results of the round to the console
 function printResults(userScore, computerScore) {
-  console.log('user score: ' + userScore + '\ncomputer score: ' + computerScore);
+  return '\nuser score: ' + userScore + '\ncomputer score: ' + computerScore;
 }
 
+function checkScores(userScore, computerScore) {
+  if (userScore < 5 || computerScore < 5) {
+    return;
+  } else {
+    return gameOver(userScore, computerScore);
+  }
+}
 
+function gameOver(userScore, computerScore) {
+  if (userScore > computerScore) {
+    return 'Gamve over. User wins!'
+  } else {
+    return 'Game over. Computer wins!'
+  }
+}
 const body = document.querySelector('body');
-
 const buttons = document.querySelectorAll('button');
+let userScore = 0;
+let computerScore = 0;
 
 buttons.forEach((button) => {
-
   button.addEventListener('click', () => {
     const results = document.createElement('div');
     body.appendChild(results);
     const result = playRound(button.id, getComputerChoice());
-    results.textContent = result;
+    if (result === 'You win') {
+      userScore++;
+    } else if (result === 'You lose') {
+      computerScore++;
+    }
+    results.textContent = result + printResults(userScore, computerScore);
+    if (checkScores(userScore, computerScore)) {
+      results.textContent = gameOver(userScore, computerScore);
+    };
   });
 });
