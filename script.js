@@ -59,7 +59,7 @@ buttons.forEach((button) => {
     }
     results.textContent = result + printResults(userScore, computerScore);
     if (checkScores(userScore, computerScore)) {
-      results.textContent = gameOver(userScore, computerScore);
+      results.textContent = printResults(userScore, computerScore) + ' ' + gameOver(userScore, computerScore);
     };
   });
 });
