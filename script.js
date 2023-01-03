@@ -34,12 +34,9 @@ function checkScores(userScore, computerScore) {
 }
 
 function gameOver(userScore, computerScore) {
-  if (userScore >= 5) {
+  if (userScore > computerScore) {
     return 'Game over. User wins!'
-  }
-  if (computerScore >= 5) {
-    return 'Game over. Computer wins!'
-  }
+  } else return 'Game over. Computer wins!'
 }
 
 const body = document.querySelector('body');
@@ -48,18 +45,18 @@ let userScore = 0;
 let computerScore = 0;
 
 buttons.forEach((button) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', function game() {
     const results = document.createElement('div');
     body.appendChild(results);
     const result = playRound(button.id, getComputerChoice());
-    if (result === 'You win') {
+    if (result === 'You win' && computerScore < 5 && userScore < 5) {
       userScore++;
-    } else if (result === 'You lose') {
+    } else if (result === 'You lose' && computerScore < 5 && userScore < 5) {
       computerScore++;
     }
     results.textContent = result + printResults(userScore, computerScore);
     if (checkScores(userScore, computerScore)) {
-      results.textContent = printResults(userScore, computerScore) + ' ' + gameOver(userScore, computerScore);
+      results.textContent = result + printResults(userScore, computerScore) + ' ' + gameOver(userScore, computerScore);
     };
   });
 });
