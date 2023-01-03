@@ -3,7 +3,7 @@ function getComputerChoice() {
     return 'rock';
   } else if (Math.floor(Math.random() * 3) === 1) {
     return 'paper';
-  } else {return 'scissors';}
+  } else return 'scissors';
 }
 
 //plays a round, returns a string reporting results
@@ -27,9 +27,9 @@ function printResults(userScore, computerScore) {
 
 function checkScores(userScore, computerScore) {
   if (userScore < 5 && computerScore < 5) {
-    return null;
+    return;
   } else {
-    return gameOver(userScore, computerScore);
+    return true;
   }
 }
 
@@ -43,10 +43,10 @@ const body = document.querySelector('body');
 const buttons = document.querySelectorAll('button');
 let userScore = 0;
 let computerScore = 0;
+const results = document.createElement('div');
 
 buttons.forEach((button) => {
-  button.addEventListener('click', function game() {
-    const results = document.createElement('div');
+  button.addEventListener('click', () => {
     body.appendChild(results);
     const result = playRound(button.id, getComputerChoice());
     if (result === 'You win' && computerScore < 5 && userScore < 5) {
